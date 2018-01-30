@@ -4,7 +4,7 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+# https://en.wikipedia.org/wiki/Tree_traversal#Pre-order
 # iterative solution using stack’s LIFO feature
 class Solution:
     def preorderTraversal(self, root):
