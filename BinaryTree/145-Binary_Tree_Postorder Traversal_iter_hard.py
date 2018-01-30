@@ -4,7 +4,7 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+# https://en.wikipedia.org/wiki/Tree_traversal#Post-order
 class Solution:
     def postorderTraversal(self, root):
         """
