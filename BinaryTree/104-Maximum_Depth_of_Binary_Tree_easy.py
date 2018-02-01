@@ -5,13 +5,13 @@
 #         self.left = None
 #         self.right = None
 
-class Solution:
+# "Bottom-up" Solution
+class BUSolution:
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
-        # "Bottom-up" Solution
         if not root:
             return 0
         if not root.left and not root.right:
@@ -19,3 +19,19 @@ class Solution:
         left_depth = self.maxDepth(root.left)
         right_depth = self.maxDepth(root.right)
         return max(left_depth, right_depth)+1
+ 
+# "Top-Down" Solution
+class TDSolution:
+    def maxDepth(self, root, d=0):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return d
+        d += 1
+        if not root.left and not root.right:
+            return d
+        left_depth = self.maxDepth(root.left, d)
+        right_depth = self.maxDepth(root.right, d)
+        return max(left_depth, right_depth)
