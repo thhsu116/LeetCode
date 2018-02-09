@@ -4,7 +4,12 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
+'''execute the following recursively:
+   1. last node in postorder is top node of the subtree
+   2. inorder is [left trr nodes, top node, right tree nodes]
+   3. postorder is [left tree nodes, right tree nodes, top node]
+   4. break inorder and postorder into left tree and right tree
+'''
 class Solution:
     def buildTree(self, inorder, postorder):
         """
