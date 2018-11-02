@@ -72,3 +72,30 @@ class Solution:
                 curr_node.next = prev_node
             prev_node = curr_node
         return curr_node
+
+# %81(112ms), O(max(m, n))
+class Solution:
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        carry_over = 0
+        dummy_head = ListNode(0)
+        curr_node = dummy_head
+        while l1 or l2:
+            _sum = carry_over
+            for l in [l1, l2]:
+                if l:
+                    _sum += l.val
+            curr_node.next = ListNode(_sum % 10)
+            curr_node = curr_node.next
+            carry_over = _sum // 10
+            if l1:
+                l1 = l1.next
+            if l2:
+                l2 = l2.next
+        if carry_over:
+            curr_node.next = ListNode(1)
+        return dummy_head.next
