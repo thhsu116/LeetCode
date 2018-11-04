@@ -1,0 +1,31 @@
+# https://leetcode.com/problems/median-of-two-sorted-arrays/description/
+
+# 77%, 100 ms, merge sort two arrays then return median
+class Solution:
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        """       
+        merge = []
+        l = len(nums1) + len(nums2)
+        m = l//2
+        while nums1 or nums2:
+            if not nums1:
+                merge += nums2
+                break
+            elif not nums2:
+                merge += nums1
+                break            
+            if nums1[0] < nums2[0]:
+                merge.append(nums1.pop(0))
+            else:
+                merge.append(nums2.pop(0))            
+            if len(merge) >= m+1:  # early termination
+                break
+        
+        if l % 2:
+            return merge[m]
+        else:
+            return (merge[m] + merge[m-1])/2
