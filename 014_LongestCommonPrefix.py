@@ -37,3 +37,5 @@ def longestCommonPrefix(strs):
             res += first if not flag else '' 
             
         return res
+
+# other algorithms: devide and conquer with recursion, binary search using prefixes of shortest string in list
