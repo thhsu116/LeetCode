@@ -99,6 +99,7 @@ class Solution:
             q += (1 << i)
         return q if (s_dividend>0) == (s_divisor>0) else -q
 # https://leetcode.com/problems/divide-two-integers/discuss/179759/Python-7-lines-(beats-99):-How-you-learned-to-divide-when-you-were-7-years-old
+# time complexity is just O(log(answer)), where answer = dividend // divisor
 def divide(self, dividend, divisor):
 
     # this is necessary; otherwise phase 1 never terminates
