@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/reverse-nodes-in-k-group/description/
 
-# 95% 56ms, traverse nodes and use stack to reverse nodes every k steps, time complexity O(n), space complexity O(1) 
+# 95% 56ms, traverse nodes and use stack to reverse nodes every k steps, time complexity O(n), space complexity O(k) 
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
