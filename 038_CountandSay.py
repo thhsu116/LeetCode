@@ -40,7 +40,7 @@ def countAndSay(self, n):
     s = '1'
     for _ in range(n - 1):
         s = ''.join(str(len(group)) + digit
-                    for group, digit in re.findall(r'((.)\2*)', s))
+                    for group, digit in re.findall(r'((.)\2*)', s))  # (.)\2* => group2, matches the number that repeats, () => group1, matches repeating numebrs
     return s
     
 def countAndSay(self, n):
